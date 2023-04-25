@@ -11,6 +11,7 @@ var uiModule = (function () {
     var procentageOfFailed = document.querySelector(".procentage1");
     var errorMessage = document.querySelector(".error");
     var title = document.querySelector("h2");
+    var container = document.querySelector(".invisible");
 
     var collectData = function () {
         return {
@@ -23,30 +24,37 @@ var uiModule = (function () {
     var validateData = function(o) {
         if(o.subject === "Choose subject" || o.student === "" || o.grade === "Grade"){
             var subjectError = "All fields are required!";
+            errorMessage.classList.remove("error");
+            errorMessage.classList.add("error-m");
             errorMessage.textContent = subjectError;
             return false;
         } else {
-          errorMessage.textContent = "";
+            errorMessage.classList.remove("error-m");
+            errorMessage.classList.add("error")
+            errorMessage.textContent = "";
           return true;
         } 
     }
     var addExamItemPassed = function (studentInfo, mark) {
+        container.classList.remove("invisible");
+        container.classList.add("container");
         var lP = document.createElement("li");
         lP.textContent = "PASSED";
         listP.appendChild(lP);
         lP.classList.add("passed-li");
         var infoS = document.createElement("li");
-        var subjectAndName = document.createElement("div");
+        var subjectAndName = document.createElement("span");
         subjectAndName.textContent = studentInfo;
         subjectAndName.classList.add("sub-name-p");
         infoS.appendChild(subjectAndName);
-        var infoG = document.createElement("div");
+        var infoG = document.createElement("span");
         infoG.textContent = mark;
         infoG.classList.add("grade-style-passed")
         listP.appendChild(infoS);
         infoS.appendChild(infoG);
-        infoS.style.borderBottom="1px solid gray";
-        infoS.style.padding="10px";
+        infoS.style.borderBottom="1px solid rgb(209,211,214)";
+        infoS.style.padding="1.5em 0.8em 2em";
+        infoS.style.width="100%";
         var allLiP = document.getElementsByClassName("passed-li").length;
         numberOfPassed.textContent = allLiP;
         numberOfPassed.classList.add("counterP");
@@ -56,22 +64,25 @@ var uiModule = (function () {
     }
 
     var addExamItemFailed = function(studentInfo, mark) {
+        container.classList.remove("invisible");
+        container.classList.add("container");
         var lF = document.createElement("li");
         lF.textContent = "FAILED";
         listF.appendChild(lF);
         lF.classList.add("failed-li");
         var infoS = document.createElement("li")
-        var subjectAndName = document.createElement("div");
+        var subjectAndName = document.createElement("span");
         subjectAndName.textContent = studentInfo;
         subjectAndName.classList.add("sub-name-f");
         infoS.appendChild(subjectAndName);
-        var infoG = document.createElement("div");
+        var infoG = document.createElement("span");
         infoG.textContent = mark;
         infoG.classList.add("grade-style-failed")
         listF.appendChild(infoS);
         infoS.appendChild(infoG);
-        infoS.style.borderBottom="1px solid gray";
-        infoS.style.padding="10px";
+        infoS.style.borderBottom="1px solid rgb(209,211,214)";
+        infoS.style.padding="1.5em 0.8em 2em";
+        infoS.style.width="100%";
         var allLiF = document.getElementsByClassName("failed-li").length;
         numberOfFailed.textContent = allLiF;
         numberOfFailed.classList.add("counterF");

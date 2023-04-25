@@ -14,21 +14,22 @@
     <div class="main">
         <header>
             <h1>Exam statistic June</h1>
-            <h2>Total students: % count %</h2>
+            <h2>Total students: 0 </h2>
             <div class="result">
                 <div class="passed">
                     <p>PASSED</p>
                     <div class="number"></div>
                     <div class="procentage"></div>
                 </div>
-                <div class="falled">
+                <div class="failed">
                     <p>FAILED</p>
                     <div class="number1"></div>
                     <div class="procentage1"></div>
                 </div>
             </div>
         </header>
-        <form action="">
+        <div class="box" >
+            <div class="information">
             <select name="" id="subject">
                 <option value="Choose subject">Choose subject</option>
                 <option value="Javascript">JavaScript</option>
@@ -36,7 +37,7 @@
                 <option value="Java">Java</option>
                 <option value="Python">Python</option>
             </select>
-            <input type="text" placeholder="Name surname" id="name">
+            <input type="text" placeholder="Name Surname" id="name">
             <select name="" id="grade">
                 <option value="Grade">Grade</option>
                 <option value="1">1</option>
@@ -50,13 +51,14 @@
                 <option value="9">9</option>
                 <option value="10">10</option>
             </select>
-            <input type="button" value="ADD" id="add">
-        </form>
+            <button id="add"> ADD </button>
+        </div>
+        </div>
     </div>
     <div class="error"></div>
-    <div class="container">
-        <ul class="result-message-p"></ul>
-        <ul class="result-message-f"></ul>
+    <div class="invisible">
+        <div class="box-passed"><ul class="result-message-p"></ul></div>
+        <div class="box-failed"><ul class="result-message-f"></ul></div>
     </div>
     <script src="./JS/data.js"></script>
     <script src="./JS/ui.js"></script>
