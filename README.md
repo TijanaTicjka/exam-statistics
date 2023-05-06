@@ -19,6 +19,6 @@ Exam Statistic is a web application based on the Model-View-Controller (MVC) pat
 - Vanilla JavaScript
 
 ### Deployment
-The project is deployed on Netlify and is accessible at the following URL:
 
-https://tijanamilenkovic-exam-statistics.netlify.app
+The project is deployed and can be accessed [here](https://tijanamilenkovic-exam-statistics.netlify.app).
+
